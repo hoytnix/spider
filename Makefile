@@ -83,7 +83,7 @@ $(ALL_FLAG): $(SOURCES)
 ifdef TRAVIS
 ci: check #test tests
 else
-ci: check clean #test tests #doc
+ci: check #test tests #doc
 endif
 
 # Development Installation #####################################################
@@ -209,3 +209,8 @@ develop:
 .PHONY: install
 install:
 	$(SYS_PYTHON) setup.py install
+
+.PHONY: bdist
+bdist:
+	$(SYS_PYTHON) setup.py bdist --format=gztar
+
